@@ -1,43 +1,19 @@
 package strings;
 
-
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 public class WordReverseTest {
 
     @Test
-    public void testReverseWords() {
-        WordReverse wordReverse = new WordReverse();
-        String input = "Welcome to GFG";
-        String expectedOutput = "emocleW ot GFG";
-
-        String actualOutput = wordReverse.reverseWords(input);
-
-        assertEquals(expectedOutput, actualOutput);
+    public void testReverseWords_successful() {
+        assertArrayEquals(new String[]{"Java", "J2EE", "Reverse", "Me"}, WordReverse.stringReverse("avaJ EE2J esreveR eM"));
     }
-
     @Test
-    public void testReverseWordsWithEmptyString() {
-        WordReverse wordReverse = new WordReverse();
-        String input = "";
-        String expectedOutput = "";
+    public void testReverse_SingleWord(){
+        assertArrayEquals(new String[]{"abc"}, WordReverse.stringReverse("cba"));
 
-        String actualOutput = wordReverse.reverseWords(input);
-
-        assertEquals(expectedOutput, actualOutput);
     }
 
-    @Test
-    public void testReverseWordsWithSingleWord() {
-        WordReverse wordReverse = new WordReverse();
-        String input = "Hello";
-        String expectedOutput = "olleH";
 
-        String actualOutput = wordReverse.reverseWords(input);
-
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    // Add more test cases as needed
 }
