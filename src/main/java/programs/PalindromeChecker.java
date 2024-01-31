@@ -1,20 +1,18 @@
 package programs;
 
 public class PalindromeChecker {
-
-    // Method to check if a number is a palindrome
-    public static boolean isPalindrome(int number) {
-        int originalNumber = number;
-        int reversedNumber = 0;
-
-        while (number > 0) {
-            int digit = number % 10;
-            reversedNumber = reversedNumber * 10 + digit;
-            number /= 10;
+        public static boolean isPalindrome(int x){
+            int num=x;
+            int rev=0;
+            int rem;
+            while(x>0){
+                rem=x%10;
+                rev=rev*10+rem;
+                x=x/10;
+            }
+            if(rev==num){
+                return true;
+            }
+            return false;
         }
-
-        return originalNumber == reversedNumber;
     }
-
-
-}

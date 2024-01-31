@@ -1,18 +1,25 @@
 package programs;
-
-
+import static org.junit.Assert.*;
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-
 public class PalindromeCheckerTest {
-
     @Test
-    public void testPalindrome() {
+    public void testIsPalindromePositive() {
         assertTrue(PalindromeChecker.isPalindrome(121));
-        assertTrue(PalindromeChecker.isPalindrome(1221));
-        assertTrue(PalindromeChecker.isPalindrome(12321));
-        assertFalse(PalindromeChecker.isPalindrome(12345));
-        assertFalse(PalindromeChecker.isPalindrome(9876));
+    }
+    @Test
+    public void testIsPalindromeNegative() {
+        assertFalse(PalindromeChecker.isPalindrome(123));
+    }
+    @Test
+    public void testIsPalindromeSingleDigit() {
+        assertTrue(PalindromeChecker.isPalindrome(7));
+    }
+    @Test
+    public void testIsPalindromeZero() {
+        assertTrue(PalindromeChecker.isPalindrome(0));
+    }
+    @Test
+    public void testIsPalindromeNegativeNumber() {
+        assertFalse(PalindromeChecker.isPalindrome(-121));
     }
 }
