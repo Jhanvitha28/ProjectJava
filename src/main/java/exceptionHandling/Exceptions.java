@@ -1,6 +1,10 @@
 package exceptionHandling;
 
-public class Exception {
+public class Exceptions {
+
+
+    public Exceptions(String message) {
+    }
 
     public static int convertInteger(String s){
         int i=0;
